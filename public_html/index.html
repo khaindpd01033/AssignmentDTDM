@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="css/jqm-demos.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="jsMobile/jquery.js"></script>
+<script src="jsMobile/main.js"></script>
+<script src="jsMobile/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	<div data-role="page" >
+	<div data-role="header">
+		<h1>ỨNG DỤNG QUẢN LÝ BÁN HÀNG</h1>
+	</div><!-- /header -->
+	<div role="content" align="center">
+    <br>
+	<button class="ui-btn ui-btn-inline" onClick="chuyenKH()"> <img class="centerimg" src="images/customer.png" width="70" height="70"/><br>Quản Lý Khách Hàng</button>
+<button class="ui-btn ui-btn-inline" onClick="chuyenSP()"> <img class="centerimg" src="images/product.png" width="70" height="70" /><br>Quản Lý Sản Phẩm</button>
+<button class="ui-btn ui-btn-inline" onClick="chuyenHD()"> <img class="centerimg" src="images/bill.png" width="70" height="70" /><br>Quản Lý Hóa Đơn</button>
+<button class="ui-btn ui-btn-inline"><img class="centerimg" src="images/staff.png" width="70" height="70"/><br>Quản Lý Nhân Viên</button>
+<br><br><img class="centerimg" src="images/logoBH.png" width="300" height="150"/><br><br>
+<button class="ui-btn ui-btn-inline"> <img class="centerimg" src="images/warehouse.png" width="70" height="70" /><br>Quản Lý Kho Hàng</button>
+<button class="ui-btn ui-btn-inline"> <img class="centerimg" src="images/store.png"  width="70" height="70"/><br>Quản Lý Cửa Hàng</button>
+<button class="ui-btn ui-btn-inline" onClick="chuyenDT()"> <img class="centerimg" src="images/financial.png"  width="70" height="70"/><br>Quản Lý Tài Chính</button>
+<button class="ui-btn ui-btn-inline"><img class="centerimg" src="images/exit.png"  width="70" height="70"/><br>Thoát Ứng Dụng</button>
+</div><!-- /content -->
+<div data-role="footer" data-position="fixed">
+		<h4>Sinh Viên Thực Hiện - Khaindpd01033- Điện Toán Đám Mây</h4>
+	</div><!-- /footer -->
+</div>
+ <!-- PAGE QUẢN LÝ KHÁCH HÀNG-->
+ <div data-role="page" id="KhachHang">
+	<div data-role="header">
+		<h1>ỨNG DỤNG QUẢN LÝ BÁN HÀNG</h1>
+	</div><!-- /header -->
+	<div role="content" align="center">
+    <div data-role="tabs" id="tabs">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#list" class="ui-btn-active ui-state-persist" data-icon="bars">Danh
+								Sách Tài Khoản KH</a></li>
+						<li><a href="#one"  data-icon="user">Quản Lý Khách Hàng</a></li>
+					</ul>
+				</div>
+
+				  
+				<div id="one" class="ui-body-d ui-content">
+					    
+					<ul data-role="listview" data-inset="true">
+						<li data-role="fieldcontain">
+							<form name="quanly" method="post">
+								<label for="passcode"><h1>Vui lòng Nhập Mã:</h1></label> <input
+									type="text" name="txtmaSV" id="txtmaSV" value=""
+									placeholder="Mã Khách Hàng......" />
+
+								<fieldset data-role="collapsible" >
+									        
+									<legend>
+										<h1 style="text-align: center">Thêm Mới Khách Hàng</h1>
+									</legend>
+									<label>Nhập Thông Tin Sinh Viên:</label> <input type="text"
+										id="updateTenSV" placeholder="Tên Khách Hàng:" value="" /> <input
+										type="text" id="updatelopSV" placeholder="Mã Khách Hàng:" value="">
+									<input type="text" id="updatenganhSV" placeholder="Tài Khoản :"
+										value="" /> <input type="text" id="updateGioiTinhSV"
+										placeholder="Gioi Tính" value="" /> <input type="text"
+										id="updatediachiSV" placeholder="Địa Chỉ:" value="" /><label for="file">Hình
+										ảnh:</label> <input type="text" name="file" id="updatefile"
+										value="images/icon.png"> 
+										<input type="button"
+										name="add" value="Thêm Mới Khách Hàng" id="edit" data-icon="edit"
+										onClick="" data-theme="b" />     
+								</fieldset>
+								<input data-icon="delete" type="button" name="xoa" id="xoa"
+									onclick=""
+									value="Xóa Khách Hàng" />
+									<input
+									data-icon="user" type="button" name="xem" value="Xem Thông Tin Khách Hàng" onclick=""/><input
+									data-icon="power" type="button" name="exit" onclick="chuyenTrang()" value="Home" /> <br>
+								<br>
+							</form>
+
+						</li>
+					</ul>
+					    
+				</div>
+				  
+				<div id="list">
+					<ul data-role="listview" data-filter="true"
+						data-filter-placeholder="Tìm kiếm khách hàng......." data-inset="true"
+						id="itemsList">
+					</ul>
+					 
+				</div>
+			</div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+		<h4>Sinh Viên Thực Hiện - Khaindpd01033- Điện Toán Đám Mây</h4>
+	</div><!-- /footer -->
+</div>
+<!-- PAGE QUẢN LÝ DOANH THU-->
+ <div data-role="page" id="DoanhThu">
+	<div data-role="header">
+		<h1>ỨNG DỤNG QUẢN LÝ BÁN HÀNG</h1>
+	</div><!-- /header -->
+	<div role="content" align="center">
+    <ul data-role="listview">
+    <li>Doanh Thu Ngày 1</li>
+    <li>Doanh Thu Ngày 2</li>
+    <li>Doanh Thu Ngày 3</li>
+    <li>Doanh Thu Ngày 4</li>
+    <li>Doanh Thu Ngày 5</li>
+</ul>
+    </div>
+    </div>
+        <!-- PAGE QUẢN LÝ SẢN PHẨM-->
+ <div data-role="page" id="SanPham">
+	<div data-role="header">
+		<h1>ỨNG DỤNG QUẢN LÝ BÁN HÀNG</h1>
+	</div><!-- /header -->
+	<div role="content" align="center">
+    <div data-role="tabs" id="tabs">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#listsp" class="ui-btn-active ui-state-persist" data-icon="bars">Sản Phẩm Hiện Có</a></li>
+						<li><a href="#onesp"  data-icon="user">Thêm Mới Sản Phẩm</a></li>
+					</ul>
+				</div>
+                <div id="listsp">
+					<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true">
+    <li><a href="#">
+        <img src="../_assets/img/album-bb.jpg">
+    <h2>Broken Bells</h2>
+    <p>Broken Bells</p></a>
+        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+    </li>
+    <li><a href="#">
+        <img src="../_assets/img/album-hc.jpg">
+    <h2>Warning</h2>
+    <p>Hot Chip</p></a>
+        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+    </li>
+    <li><a href="#">
+        <img src="../_assets/img/album-p.jpg">
+    <h2>Wolfgang Amadeus Phoenix</h2>
+    <p>Phoenix</p></a>
+        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+    </li>
+</ul>
+<div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+    <h3>Purchase Album?</h3>
+<p>Your download will begin immediately on your mobile device when you purchase.</p>
+    <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini">Buy: $10.99</a>
+    <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+</div>
+					 
+				</div>
+              <div id="onesp" class="ui-body-d ui-content">
+					    
+					<ul data-role="listview" data-inset="true">
+						<li data-role="fieldcontain">
+                        	<fieldset data-role="collapsible" >
+									        
+									<legend>
+										<h1 style="text-align: center">Thêm Mới Sản Phẩm</h1>
+									</legend>
+									<label>Nhập Thông Tin Sinh Viên:</label> <input type="text"
+										id="updateTenSV" placeholder="Tên Mặt Hàng:" value="" /> <input
+										type="text" id="updatelopSV" placeholder="Mã Hàng:" value="">
+									<input type="text" id="updatenganhSV" placeholder="Số Lượng :"
+										value="" /> <input type="text" id="updateGioiTinhSV"
+										placeholder="Gía Tiền:" value="" /> <input type="text"
+										id="updatediachiSV" placeholder="Nơi Nhập:" value="" /><label for="file">Hình
+										ảnh:</label> <input type="text" name="file" id="updatefile"
+										value="images/icon.png"> 
+										<input type="button"
+										name="add" value="Thêm Mới Sản Phẩm" id="edit" data-icon="edit"
+										onClick="" data-theme="b" />     
+								</fieldset>
+                                </li>
+                                </ul>
+                                </div>
+    </div>
+    </div>
+    </div>
+     <!-- PAGE QUẢN LÝ HÓA ĐƠN-->
+ <div data-role="page" id="HoaDon">
+	<div data-role="header">
+		<h1>ỨNG DỤNG QUẢN LÝ BÁN HÀNG</h1>
+	</div><!-- /header -->
+	<div role="content" align="center">
+    <label>Viết Hóa Đơn:</label> <input type="text"
+										id="updateTenSV" placeholder="Tên Mặt Hàng:" value="" /> <input
+										type="text" id="updatelopSV" placeholder="Mã Hàng:" value="">
+									<input type="text" id="updatenganhSV" placeholder="Số Lượng :"
+										value="" /> <input type="text" id="updateGioiTinhSV"
+										placeholder="Gía Tiền:" value="" /> 
+                                        <input type="text" id="updateGioiTinhSV"
+										placeholder="Số Lượng:" value="" />
+                                        <input type="text" id="updateGioiTinhSV"
+										placeholder="Tên Khách Hàng:" value="" />
+                                        <input type="text" id="updateGioiTinhSV"
+										placeholder="Tổng Tiền:" value="" /><input type="text"
+										id="updatediachiSV" placeholder="Nơi Nhập:" value="" />
+										<input type="button"
+										name="add" value="Viết" id="edit" data-icon="edit"
+										onClick="" data-theme="b" />   
+    </div>
+    </div>
+
+
+</body>
+</html>
